@@ -37,6 +37,7 @@ function createFavoriteElement(api) {
         </div>
     `;
 
+
     const favoriteList = document.querySelector('.favorite-list');
     favoriteList.appendChild(favoriteContainer);
     removeFavorite(favoriteContainer, id);
