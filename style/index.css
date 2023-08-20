@@ -11,19 +11,18 @@ html {
 
 }
 
+nav{
+    background-color: #007a7c;
+    height: 80px;
+}
+
+
+
 main{
    width:99% ; 
    margin: 0 auto;
 }
 
-.header {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
-    height: 66px;
-    background-color: red;
-}
 
 input{
     padding: 3px;
@@ -31,23 +30,31 @@ input{
 }
 
 .list {
+    padding-top: 20px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     flex-wrap: wrap;
     gap: 2rem;
     word-wrap: break-word;
 }
 
 .item {
-    width: 180px;
-    height: 360px;
+    width: 230px;
+    border: 1px solid #d3cdcdf3;
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px;
     text-align: center;
     padding: 3px;
+    
 
+
+}
+
+.item:hover{
+    border: 1px solid #28a745;
 
 }
 
@@ -63,19 +70,21 @@ input{
 
 }
 
-button {
-    cursor: pointer;
-    padding: 3px;
-    background-color: aliceblue;
-    border: 1px solid;
-    border-radius: 3px;
+.section-btn{
+    margin-bottom: 10px;
+   
+}
+
+.img-favorite:hover {
+    background-color: red;
+    color: aliceblue;
+    border: none;
 
 }
 
-button:hover {
-    background-color: red;
-    color: aliceblue;
-
+span .img-favorite{
+    height: 16px;
+    width: 16px;
 }
 
 
@@ -94,3 +103,6 @@ dialog {
     padding: 2px;
 
 }
+
+
+
