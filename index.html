@@ -18,37 +18,40 @@
 <body>
     <header class="header">
 
-        <nav class="navbar ">
-            <div class="container-fluid d-flex justify-content-around">
-               <h1>Titulo</h1>
-               
-                <a class="nav-link active" href="./index.html">Home</a>
-                <a class="nav-link" href="./pages/favorites.html">Favoritos</a>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Digite o nome do livro..."
-                        aria-label="Search" id="search">
-                    <button class="btn btn-success" type="submit" id="btnSearch">Pesquisar</button>
-                </form>
+        <nav class="navbar navbar-expand-md">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Lib</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                    <ul class="navbar-nav m-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="./pages/favorites.html">Favoritos</a>
+                        </li>
+
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
+                            id="search">
+                        <button class="btn btn-success" type="submit" id="btnSearch">Search</button>
+                    </form>
+                </div>
             </div>
         </nav>
+
+
     </header>
 
 
     <main>
         <section class="list">
-            <div class="item border">
-                <h2 class="book-title">Flores Para Algernon</h2>
-                <img src="http://books.google.com/books/content?id=KBdiDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api"
-                    alt="">
-                <div class="section-btn">
-                    <button class=" btn btn-primary show-details-button">Saiba mais</button>
-
-                    <button data-btn-favorite class="btn btn-danger">
-                        <i class="bi bi-heart"></i>
-                    </button>
-                </div>
-            </div>
-
+           
         </section>
 
         <dialog data-modal>

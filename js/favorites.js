@@ -23,18 +23,16 @@ function createFavoriteElement(api) {
 
   favoriteContainer.innerHTML = `
 
-  <h3>${title}</h3>
-        <img class="img-favorite" src="${image}">
-        <div>
-            <section class="favorite-info">
-               
-              
-            </section>
-            <section class="remove-favorite" id=${id}>
-                <button class="remove-button btn btn-danger">Remover</button>
-            </section>
+  <h2 class="book-title">${title}</h2>
+        <img src="${image}">
+        <div class="section-btn">
+         
+        <button class="remove-button btn btn-danger" id=${id}>Remover</button>
+                    
         </div>
-   
+
+        </div>
+       
     `;
 
   const favoriteList = document.querySelector(".favorite-list");
@@ -44,7 +42,7 @@ function createFavoriteElement(api) {
 
 function removeFavorite(list) {
   const removeBook = list.querySelector(".remove-button");
-  const id = list.childNodes[3].childNodes[3].getAttribute("id");
+  const id = list.childNodes[5].childNodes[1].getAttribute("id");
 
   removeBook.addEventListener("click", () => {
     list.remove();

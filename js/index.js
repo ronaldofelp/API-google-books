@@ -91,8 +91,31 @@ async function getIdBook(id) {
 
 function openModal(book) {
   const modal = document.querySelector("[data-modal]");
-  modal.innerHTML = `<img src="${book.volumeInfo.imageLinks.thumbnail}" alt="">
-    <h2>${book.volumeInfo.title}</h2>
-    <p>${book.volumeInfo.description}</p>`;
+  modal.innerHTML = ` 
+  <div class="modal-text">
+
+    <div class="modal-info">
+        <p> Titulo: ${book.volumeInfo.title}</p>
+        <p>Autor: ${book.volumeInfo.authors[0]}</p>
+        <p>Editora: ${book.volumeInfo.authors[1]}</p>
+        <p>${book.volumeInfo.description}</p>
+    </div>
+    
+
+    
+
+    <button class="btn btn-primary btn-back" id="btn-back">Voltar</button>
+
+</div>`;
+
   modal.showModal();
+  backModal(modal);
+}
+
+function backModal(modal) {
+  const btnBack = document.querySelector("#btn-back");
+  btnBack.addEventListener("click", () => {
+    modal.close();
+    modal.innerHTML=''
+  });
 }
