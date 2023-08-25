@@ -18,7 +18,7 @@ btnSearch.addEventListener("click", (event) => {
 async function searchBook(input) {
   try {
     const api = await fetch(
-      `https://www.googleapis.com/books/v1/volumes?q=${input.value}&maxResults=15&key=${apiKey}`
+      `https://www.googleapis.com/books/v1/volumes?q=${input.value}&maxResults=30&key=${apiKey}`
     );
     const resultOfSearch = await api.json();
     creatBook(resultOfSearch.items);
@@ -78,7 +78,7 @@ function listBooks() {
       listBooksFavorite.push(favoriteBook);
 
       localStorage.setItem("books", JSON.stringify(listBooksFavorite));
-      alert("Livro adicionado aos favoritos!");
+      alert(`Livro "${title}" adicionado aos favoritos!`);
     });
   });
 }
@@ -91,14 +91,22 @@ async function getIdBook(id) {
 
 function openModal(book) {
   const modal = document.querySelector("[data-modal]");
+  const title = book.volumeInfo.title;
+  const author = book.volumeInfo.authors[0];
+  const publishingCompany = book.volumeInfo.authors[1];
+  const description = book.volumeInfo.description;
+  modal.style.display = "flex";
+
   modal.innerHTML = ` 
   <div class="modal-text">
 
     <div class="modal-info">
-        <p> Titulo: ${book.volumeInfo.title}</p>
-        <p>Autor: ${book.volumeInfo.authors[0]}</p>
-        <p>Editora: ${book.volumeInfo.authors[1]}</p>
-        <p>${book.volumeInfo.description}</p>
+        <p> Titulo: ${title}</p>
+        <p>Autor: ${author}</p>
+        <p>Editora: ${
+          publishingCompany == undefined ? "indisponível" : publishingCompany
+        }</p>
+        <p>${description}</p>
     </div>
     
 
@@ -115,7 +123,7 @@ function openModal(book) {
 function backModal(modal) {
   const btnBack = document.querySelector("#btn-back");
   btnBack.addEventListener("click", () => {
+    modal.style.display = "none";
     modal.close();
-    modal.innerHTML=''
   });
 }

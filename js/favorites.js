@@ -1,5 +1,17 @@
 const listBooksFavorite = JSON.parse(localStorage.getItem("books")) || [];
 
+import Swiper from "https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.mjs";
+
+const swiper = new Swiper(".swiper", {
+  spaceBetween: 15,
+  slidesPerView: 3,
+
+  pagination: {
+    el: ".swiper-pagination",
+    type: "bullets",
+  },
+});
+
 listBooksFavorite.forEach((element) => {
   getAPI(element.id);
 });
@@ -37,15 +49,16 @@ function createFavoriteElement(api) {
 
   const favoriteList = document.querySelector(".favorite-list");
   favoriteList.appendChild(favoriteContainer);
-  removeFavorite(favoriteContainer);
+  removeFavorite(favoriteContainer, title);
 }
 
-function removeFavorite(list) {
+function removeFavorite(list, title) {
   const removeBook = list.querySelector(".remove-button");
   const id = list.childNodes[5].childNodes[1].getAttribute("id");
 
   removeBook.addEventListener("click", () => {
     list.remove();
+    alert(`O livro "${title}" foi removido da lista de favoritos!`);
 
     listBooksFavorite.splice(
       listBooksFavorite.findIndex((item) => item.id === id),

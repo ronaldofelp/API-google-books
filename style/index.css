@@ -1,136 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@1&family=Raleway:wght@700&display=swap');
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Libre Baskerville', serif;
+
+
+}
+
+h2,h3{
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
 }
 
 
 
-
-nav{
-    background-color: #007a7c;
-    
+nav {
+  background-color: #007a7c;
+  
 }
 
-
-
-main{
-   width:99% ; 
-   margin: 0 auto;
-}
-
-
-input{
-    padding: 3px;
-    width: 391px;
+input {
+  padding: 3px;
+  width: 391px;
 }
 
 .list {
-    padding-top: 20px;
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    gap: 2rem;
-    word-wrap: break-word;
+  margin: 5rem 0;
+  flex-wrap: wrap;
+  gap: 2rem;
+  word-wrap: break-word;
 }
 
 .item {
-    width: 230px;
-    border: 1px solid #d3cdcdf3;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    text-align: center;
-    padding: 3px;
-    
-
-
+  width: 230px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #d3cdcdf3;
+  border-radius: 10px;
+  gap: 10px;
+  padding-bottom: 20px;
+  
 }
 
-.item:hover{
-    border: 1px solid #28a745;
-
+.item:hover {
+  border: 1px solid #28a745;
 }
 
 .book-title {
-    font-size: 1rem;
-    height: 60px;
-    padding-top: 15%;
+  font-size: 1rem;
+  height: 60px;
+  padding-top: 15%;
 }
 
 .item img {
-    width: 148px;
-    height: 245px;
-
-}
-
-.section-btn{
-    margin-bottom: 10px;
-   
+  width: 148px;
+  height: 245px;
 }
 
 .img-favorite:hover {
-    background-color: red;
-    color: aliceblue;
-    border: none;
-
+  background-color: red;
+  color: aliceblue;
+  border: none;
 }
 
-span .img-favorite{
-    height: 16px;
-    width: 16px;
+span .img-favorite {
+  height: 16px;
+  width: 16px;
 }
-
-
 
 dialog::backdrop {
-    background-color: rgb(0 0 0 / .6);
-    
-
+  background-color: rgb(0 0 0 / 0.6);
+  border: none;
 }
 
 dialog {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 50px;
-    margin: auto auto;
-    border: none;
-    border-radius: .5rem;
-    
-    width: 80%;
-    height: 80%;
-    padding: 2px;
-
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 50px;
+  margin: auto auto;
+  border: none;
+  border-radius: 0.5rem;
+  width: 80%;
+  height: 80%;
+  padding: 2px 20px;
 }
 
-
-
-.modal-text, .modal-button {
-    height: 80%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    text-align: center;
-    
-    
+.modal-text,
+.modal-button {
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
 }
 
-.modal-info{
-    overflow-y: scroll;
-    margin-bottom: 10px;
+.modal-info {
+  overflow-y: scroll;
+  margin-bottom: 10px;
 }
 
-
-
-dialog button{
-    height: 40px;
-    width: 100px;
-    margin: 0 auto;
-    
-    
+dialog button {
+  height: 40px;
+  width: 100px;
+  margin: 0 auto;
 }
-
-
