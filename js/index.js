@@ -1,4 +1,4 @@
-import { apiKey } from "./key.js";
+
 const btnSearch = document.querySelector("#btnSearch");
 const listBooksFavorite = JSON.parse(localStorage.getItem("books")) || [];
 
@@ -18,7 +18,7 @@ btnSearch.addEventListener("click", (event) => {
 async function searchBook(input) {
   try {
     const api = await fetch(
-      `https://www.googleapis.com/books/v1/volumes?q=${input.value}&maxResults=30&key=${apiKey}`
+      `https://www.googleapis.com/books/v1/volumes?q=${input.value}&maxResults=30&key`
     );
     const resultOfSearch = await api.json();
     creatBook(resultOfSearch.items);

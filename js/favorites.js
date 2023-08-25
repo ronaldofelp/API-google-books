@@ -1,16 +1,6 @@
 const listBooksFavorite = JSON.parse(localStorage.getItem("books")) || [];
 
-import Swiper from "https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.mjs";
 
-const swiper = new Swiper(".swiper", {
-  spaceBetween: 15,
-  slidesPerView: 3,
-
-  pagination: {
-    el: ".swiper-pagination",
-    type: "bullets",
-  },
-});
 
 listBooksFavorite.forEach((element) => {
   getAPI(element.id);
